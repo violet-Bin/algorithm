@@ -9,7 +9,31 @@ package com.algorithm.swordoffer;
 public class Code11Power {
 
     public double power(double base, int exponent) {
-        return 0.0;
+
+        double temp = 1;
+        if (exponent > 0) {
+            for (int i = 0; i < exponent; i++) {
+                temp = temp * base;
+                if (temp > Double.MAX_VALUE) {
+                    System.out.println("超过最大值！");
+                    return -1;
+                }
+            }
+            return temp;
+        } else if (exponent < 0) {
+            exponent = -exponent;
+            for (int i = 0; i < exponent; i++) {
+                temp = temp * base;
+                if (temp > Double.MAX_VALUE) {
+                    System.out.println("超过最大值");
+                    return -1;
+                }
+            }
+            temp = 1.0 / temp;
+            return temp;
+        } else {
+            return 1;
+        }
     }
 
 }
