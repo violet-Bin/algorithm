@@ -1,4 +1,4 @@
-package com.algorithm.code02;
+package com.algorithm.coder.no1.code02;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

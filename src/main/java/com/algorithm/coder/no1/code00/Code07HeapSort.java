@@ -1,4 +1,4 @@
-package com.algorithm.code00;
+package com.algorithm.coder.no1.code00;
 
 import sun.java2d.pipe.AAShapePipe;
 

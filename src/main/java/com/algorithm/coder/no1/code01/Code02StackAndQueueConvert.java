@@ -1,4 +1,4 @@
-package com.algorithm.code01;
+package com.algorithm.coder.no1.code01;
 
 import java.util.LinkedList;
 import java.util.Queue;
