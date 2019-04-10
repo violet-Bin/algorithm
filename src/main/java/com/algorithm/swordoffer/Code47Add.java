@@ -7,9 +7,9 @@ import java.math.BigInteger;
  * @Description: 写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。
  * @Date: Create in 23:45 2019/4/9
  */
-public class Code46Add {
+public class Code47Add {
 
-    public int Add(int num1,int num2) {
+    public int add(int num1,int num2) {
         BigInteger bi1 = new BigInteger(String.valueOf(num1));
         BigInteger bi2 = new BigInteger(String.valueOf(num2));
         return bi1.add(bi2).intValue();
@@ -28,7 +28,7 @@ public class Code46Add {
      * 第三步重复上述两步， 各位相加 010^1010=1000，进位值为100=(010&1010)<<1。
      *      继续重复上述两步：1000^100 = 1100，进位值为0，跳出循环，1100为最终结果。
      */
-    public int Add1(int num1,int num2) {
+    public int add1(int num1,int num2) {
         while (num2!=0) {
             int temp = num1^num2;
             num2 = (num1&num2)<<1;

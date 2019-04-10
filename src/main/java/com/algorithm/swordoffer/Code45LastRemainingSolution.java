@@ -12,7 +12,7 @@ package com.algorithm.swordoffer;
  * 直到剩下最后一个小朋友,可以不用表演,并且拿到牛客名贵的“名侦探柯南”典藏版(名额有限哦!!^_^)。
  * 请你试着想下,哪个小朋友会得到这份礼品呢？(注：小朋友的编号是从0到n-1)
  */
-public class Code44LastRemainingSolution {
+public class Code45LastRemainingSolution {
 
     public int lastRemainingSolution(int n, int m) {
         if (n <= 0 || m <= 0) {
@@ -39,7 +39,7 @@ public class Code44LastRemainingSolution {
     }
 
     public static void main(String[] args) {
-        Code44LastRemainingSolution obj = new Code44LastRemainingSolution();
+        Code45LastRemainingSolution obj = new Code45LastRemainingSolution();
         obj.lastRemainingSolution(10, 5);
     }
 

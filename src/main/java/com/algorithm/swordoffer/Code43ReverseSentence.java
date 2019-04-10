@@ -5,7 +5,7 @@ package com.algorithm.swordoffer;
  * @date: 2019/4/9
  * @Description:  student a am I  -->  I am a student
  */
-public class Code42ReverseSentence {
+public class Code43ReverseSentence {
 
     public String reverseSentence(String str) {
         if (str.trim().equals("")) {

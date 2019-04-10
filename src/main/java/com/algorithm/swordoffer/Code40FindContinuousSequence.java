@@ -1,6 +1,5 @@
 package com.algorithm.swordoffer;
 
-import java.rmi.MarshalException;
 import java.util.ArrayList;
 
 /**
@@ -26,7 +25,7 @@ import java.util.ArrayList;
  * 完整代码：时间复杂度为 O(n^(1/2))
  * (sum / n) - (n - 1) / 2 : 第一个数
  */
-public class Code39FindContinuousSequence {
+public class Code40FindContinuousSequence {
 
     public ArrayList<ArrayList<Integer>> findContinuousSequence(int sum) {
         ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
@@ -43,7 +42,7 @@ public class Code39FindContinuousSequence {
     }
 
     public static void main(String[] args) {
-        Code39FindContinuousSequence obj = new Code39FindContinuousSequence();
+        Code40FindContinuousSequence obj = new Code40FindContinuousSequence();
         ArrayList<ArrayList<Integer>> continuousSequence = obj.findContinuousSequence(100);
         System.out.println(continuousSequence);
     }

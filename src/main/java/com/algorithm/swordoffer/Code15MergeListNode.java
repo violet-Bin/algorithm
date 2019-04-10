@@ -8,7 +8,7 @@ package com.algorithm.swordoffer;
  */
 public class Code15MergeListNode {
 
-    public ListNode Merge(ListNode list1, ListNode list2) {
+    public ListNode merge(ListNode list1, ListNode list2) {
         if (list1 == null) {
             return list2;
         } else if (list2 == null) {
@@ -18,10 +18,10 @@ public class Code15MergeListNode {
         ListNode pMergeHead;
         if (list1.val < list2.val) {
             pMergeHead = list1;
-            pMergeHead.next = Merge(list1.next, list2);
+            pMergeHead.next = merge(list1.next, list2);
         } else {
             pMergeHead = list2;
-            pMergeHead.next = Merge(list1, list2.next);
+            pMergeHead.next = merge(list1, list2.next);
         }
         return pMergeHead;
     }

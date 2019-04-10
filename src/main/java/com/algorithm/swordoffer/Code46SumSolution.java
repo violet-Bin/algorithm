@@ -7,7 +7,7 @@ package com.algorithm.swordoffer;
  * (n+n*n)/2
  * @Date: Create in 23:40 2019/4/9
  */
-public class Code45SumSolution {
+public class Code46SumSolution {
 
     public int sumSolution(int n) {
         int sum = (int) (Math.pow(n, 2) + n);

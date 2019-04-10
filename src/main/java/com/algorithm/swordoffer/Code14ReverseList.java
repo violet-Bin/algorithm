@@ -9,7 +9,7 @@ package com.algorithm.swordoffer;
  */
 public class Code14ReverseList {
 
-    public ListNode ReverseList(ListNode head) {
+    public ListNode reverseList(ListNode head) {
 
         if (head == null) {
             return null;

@@ -26,7 +26,7 @@ package com.algorithm.swordoffer;
  *  而其它数字都出现了两次。因此到此为止，所有的问题我们都已经解决
  */
 
-public class Code38FindNumsAppearOnce {
+public class Code39FindNumsAppearOnce {
 
     //num1,num2分别为长度为1的数组。传出参数
     //将num1[0],num2[0]设置为返回结果
@@ -52,7 +52,7 @@ public class Code38FindNumsAppearOnce {
     }
 
     public static void main(String[] args) {
-        Code38FindNumsAppearOnce obj = new Code38FindNumsAppearOnce();
+        Code39FindNumsAppearOnce obj = new Code39FindNumsAppearOnce();
         int[] arr = {2, 4, 5, 6, 7, 8, 9, 2, 4, 6, 7, 9};
         int[] num1 = new int[1];
         int[] num2 = new int[1];

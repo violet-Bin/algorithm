@@ -8,7 +8,7 @@ package com.algorithm.swordoffer;
  */
 public class Code13FindKthToTail {
 
-    public ListNode FindKthToTail(ListNode listNode, int k) {
+    public ListNode findKthToTail(ListNode listNode, int k) {
         if (listNode == null) {
             return null;
         }

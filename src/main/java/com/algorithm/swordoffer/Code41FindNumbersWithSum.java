@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * 解：
  * 是排序好的：左右加逼
  */
-public class Code40FindNumbersWithSum {
+public class Code41FindNumbersWithSum {
 
     public ArrayList<Integer> findNumbersWithSum(int[] array, int sum) {
 

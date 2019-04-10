@@ -10,7 +10,7 @@ package com.algorithm.swordoffer;
  * 即“XYZdefabc”。是不是很简单？OK，搞定它！
  *
  */
-public class Code41LeftRotateString {
+public class Code42LeftRotateString {
 
     public String leftRotateString(String str,int n) {
         if (str.length() == 0) {

@@ -21,7 +21,7 @@ import java.util.Arrays;
  * 4、如果2、3相等，就是顺子
  * 5、如果出现对子，则不是顺子
  */
-public class Code43IsContinuous {
+public class Code44IsContinuous {
 
     public boolean isContinuous(int [] numbers) {
         int numOfZero = 0;

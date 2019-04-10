@@ -7,9 +7,9 @@ package com.algorithm.swordoffer;
  * 数值为0或者字符串不是一个合法的数值则返回0。
  * @Date: Create in 0:00 2019/4/10
  */
-public class Code48StrToInt {
+public class Code49StrToInt {
 
-    public int StrToInt(String str) {
+    public int strToInt(String str) {
         if (str.equals("") || str.length() == 0) {
             return 0;
         }

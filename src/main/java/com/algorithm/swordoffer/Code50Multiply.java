@@ -22,7 +22,7 @@ import java.time.temporal.Temporal;
  * 然后倒过来按上三角中的分布规律，把另一部分也乘进去。
  * @Date: Create in 0:26 2019/4/10
  */
-public class Code49Multiply {
+public class Code50Multiply {
 
     public int[] multiply(int[] A) {
         int length = A.length;

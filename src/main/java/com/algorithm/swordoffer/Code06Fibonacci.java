@@ -10,7 +10,7 @@ package com.algorithm.swordoffer;
  */
 public class Code06Fibonacci {
 
-    public int Fibonacci(int n) {
+    public int fibonacci(int n) {
         int a = 1, b = 1, c = 0;
         if (n < 0) {
             return 0;
@@ -28,7 +28,7 @@ public class Code06Fibonacci {
 
     public static void main(String[] args) {
         Code06Fibonacci obj = new Code06Fibonacci();
-        int fibonacci = obj.Fibonacci(3);
+        int fibonacci = obj.fibonacci(3);
         System.out.println(fibonacci);
     }
 }

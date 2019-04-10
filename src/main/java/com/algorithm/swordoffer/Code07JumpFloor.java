@@ -10,7 +10,7 @@ package com.algorithm.swordoffer;
  */
 public class Code07JumpFloor {
 
-    public int JumpFloor(int target) {
+    public int jumpFloor(int target) {
         if (target <= 0) {
             return 0;
         }
