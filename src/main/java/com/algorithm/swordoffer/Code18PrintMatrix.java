@@ -1,7 +1,5 @@
 package com.algorithm.swordoffer;
 
-import sun.misc.LRUCache;
-
 import java.util.ArrayList;
 
 /**

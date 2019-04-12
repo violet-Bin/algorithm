@@ -12,7 +12,7 @@ import java.util.LinkedList;
  */
 public class Code62MedianInNums {
 
-    LinkedList<Integer> list = new LinkedList<Integer>();
+    LinkedList<Integer> list = new LinkedList<>();
 
     public void Insert(Integer num) {
         if (list.size() == 0 || num < list.getFirst()) {

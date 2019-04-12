@@ -1,7 +1,7 @@
 package com.algorithm.swordoffer;
 
 /**
- * @Author: jiangjiabin
+ * @Author: jiangjiabin001
  * @Description: 输入一个链表，输出该链表中倒数第k个结点。
  * 注：可以用两个指针
  * @Date: Create in 0:12 2019/4/5

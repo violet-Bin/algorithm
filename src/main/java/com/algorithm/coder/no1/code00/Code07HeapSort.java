@@ -1,7 +1,5 @@
 package com.algorithm.coder.no1.code00;
 
-import sun.java2d.pipe.AAShapePipe;
-
 /**
  * @Author: jiangjiabin
  * @Description: 堆是满二叉树
