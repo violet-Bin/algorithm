@@ -12,6 +12,12 @@ package com.algorithm.question;
  */
 public class OddIncreaseEvenDecrease {
 
+    public static ListNode orderList(ListNode head) {
+        ListNode[] nodes = getLists(head);
+        ListNode head2 = reverseList(nodes[1]);
+        ListNode listNode = combineList(nodes[0], head2);
+        return listNode;
+    }
     /**
      * 按奇偶位拆分成两个链表
      *
@@ -21,6 +27,9 @@ public class OddIncreaseEvenDecrease {
     public static ListNode[] getLists(ListNode head) {
         if (head == null) {
             return null;
+        }
+        if (head.next == null) {
+            return new ListNode[]{head, null};
         }
         ListNode head1 = null;
         ListNode head2 = null;
@@ -107,16 +116,11 @@ public class OddIncreaseEvenDecrease {
 
     public static void main(String[] args) {
         ListNode head = init();
-        ListNode[] lists = getLists(head);
+        ListNode listNode = orderList(head);
 
-        ListNode head1 = lists[0];
-        ListNode head2 = lists[1];
-        head2 = reverseList(head2);
-
-        head = combineList(head1, head2);
-        while(head != null){
-            System.out.println(head.val);
-            head = head.next;
+        while(listNode != null){
+            System.out.println(listNode.val);
+            listNode = listNode.next;
         }
     }
 

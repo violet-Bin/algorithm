@@ -57,7 +57,26 @@ public class Code07HeapSort {
     }
 
     public static void main(String[] args) {
+        int testTime = 500000;
+        int maxSize = 100;
+        int maxValue = 100;
+        boolean succeed = true;
+        for (int i = 0; i < testTime; i++) {
+            int[] arr1 = Common.generateRandomArray(maxSize, maxValue);
+            int[] arr2 = Common.copyArray(arr1);
+            heapSort(arr1);
+            Common.comparator(arr2);
+            if (!Common.isEqual(arr1, arr2)) {
+                succeed = false;
+                break;
+            }
+        }
+        System.out.println(succeed ? "Nice!" : "Fucking fucked!");
 
+        int[] arr = Common.generateRandomArray(maxSize, maxValue);
+        Common.printArray(arr);
+        heapSort(arr);
+        Common.printArray(arr);
     }
 
 }

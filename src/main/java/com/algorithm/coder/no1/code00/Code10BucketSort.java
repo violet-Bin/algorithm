@@ -58,25 +58,6 @@ public class Code10BucketSort {
     }
 
     // for test
-    public static boolean isEqual(int[] arr1, int[] arr2) {
-        if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
-            return false;
-        }
-        if (arr1 == null && arr2 == null) {
-            return true;
-        }
-        if (arr1.length != arr2.length) {
-            return false;
-        }
-        for (int i = 0; i < arr1.length; i++) {
-            if (arr1[i] != arr2[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    // for test
     public static void printArray(int[] arr) {
         if (arr == null) {
             return;
@@ -98,7 +79,7 @@ public class Code10BucketSort {
             int[] arr2 = copyArray(arr1);
             bucketSort(arr1);
             comparator(arr2);
-            if (!isEqual(arr1, arr2)) {
+            if (!Common.isEqual(arr1, arr2)) {
                 succeed = false;
                 printArray(arr1);
                 printArray(arr2);

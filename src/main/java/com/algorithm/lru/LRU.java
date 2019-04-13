@@ -61,12 +61,12 @@ public class LRU {
             newNode.value = value;
             this.cache.put(key, newNode);
             this.addNode(newNode);
-            ++count;
+            count++;
 
             if (count > capacity) {
                 DLinkedList lastNode = this.popLast();
                 this.cache.remove(lastNode.key);
-                --count;
+                count--;
             }
         } else {
             node.value = value;

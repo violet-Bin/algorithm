@@ -16,21 +16,34 @@ public class Code02SelectionSort {
         for (int i = 0; i < arr.length; i++) {
             int minIndex = i;
             for (int j = i + 1; j < arr.length; j++) {
-                minIndex = arr[j] < arr[minIndex] ? j : minIndex;
+                minIndex = arr[j] < arr[minIndex] ? j : minIndex;//可以先记录下最小值的下标,最后交换。
             }
             Common.swap(arr, i, minIndex);
         }
     }
 
+    public static void selectionSort2(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[i]) {
+                    Common.swap(arr, i, j);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int testTime = 500000;//测试50万次
-        int maxSize = 10;
+        int maxSize = 30;
         int maxValue = 100;
         boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = Common.generateRandomArray(maxSize, maxValue);
             int[] arr2 = Common.copyArray(arr1);
-            selectionSort(arr1);
+            selectionSort2(arr1);
             Common.comparator(arr2);
             if (!Common.isEqual(arr1, arr2)) {
                 succeed = false;
@@ -41,7 +54,27 @@ public class Code02SelectionSort {
 
         int[] arr = Common.generateRandomArray(maxSize, maxValue);
         Common.printArray(arr);
-        selectionSort(arr);
+        selectionSort2(arr);
         Common.printArray(arr);
+//        int testTime = 500000;//测试50万次
+//        int maxSize = 10;
+//        int maxValue = 100;
+//        boolean succeed = true;
+//        for (int i = 0; i < testTime; i++) {
+//            int[] arr1 = Common.generateRandomArray(maxSize, maxValue);
+//            int[] arr2 = Common.copyArray(arr1);
+//            selectionSort(arr1);
+//            Common.comparator(arr2);
+//            if (!Common.isEqual(arr1, arr2)) {
+//                succeed = false;
+//                break;
+//            }
+//        }
+//        System.out.println(succeed ? "Nice!" : "Fucking fucked!");
+//
+//        int[] arr = Common.generateRandomArray(maxSize, maxValue);
+//        Common.printArray(arr);
+//        selectionSort(arr);
+//        Common.printArray(arr);
     }
 }
