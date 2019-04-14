@@ -1,5 +1,7 @@
 package com.algorithm.question;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -123,6 +125,48 @@ public class TraversingTree {
         System.out.print(root.val + " ");
     }
 
+    /**
+     * 深度遍历
+     */
+    public void depthTraverse(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.empty()) {
+            TreeNode node = stack.pop();
+            System.out.print(node.val + " ");
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+        }
+    }
+
+    /**
+     * 广度遍历(层次遍历)
+     */
+    public void breadthTraverse(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            System.out.print(node.val + " ");
+            if (node.left != null) {
+                queue.offer(node.left);
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
         TreeNode root = initTree();
@@ -151,7 +195,13 @@ public class TraversingTree {
         obj.postTraverseStack(root);
         System.out.println();
 
+        System.out.println("深度遍历：");
+        obj.depthTraverse(root);
+        System.out.println();
 
+        System.out.println("层次遍历：");
+        obj.breadthTraverse(root);
+        System.out.println();
     }
 
     private static TreeNode initTree() {
@@ -171,5 +221,4 @@ public class TraversingTree {
 
         return node4;
     }
-
 }

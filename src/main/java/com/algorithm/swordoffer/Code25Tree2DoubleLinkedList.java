@@ -1,5 +1,7 @@
 package com.algorithm.swordoffer;
 
+import java.util.Stack;
+
 /**
  * @author: jiangjiabin001
  * @date: 2019/4/8
@@ -15,6 +17,12 @@ package com.algorithm.swordoffer;
  */
 public class Code25Tree2DoubleLinkedList {
 
+    /**
+     * 递归
+     *
+     * @param root
+     * @return
+     */
     public TreeNode convert(TreeNode root) {
 
         if (root == null) {
@@ -43,5 +51,44 @@ public class Code25Tree2DoubleLinkedList {
             right.left = root;
         }
         return left != null ? left : root;
+    }
+
+    /**
+     * 非递归
+     *
+     * @param root
+     * @return
+     * @Description: 解题思路：
+     * 1.核心是中序遍历的非递归算法。
+     * 2.修改当前遍历节点与前一遍历节点的指针指向。
+     * 需要记录一个pre指针即可.
+     */
+    public TreeNode convert2(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode p = root;
+        //用于保存中序遍历序列上的上一结点
+        TreeNode pre = null;
+        boolean isFirst = true;//用于判断是否为中序遍历的第一个节点
+        while (p != null || !stack.empty()) {
+            while (p != null) {
+                stack.push(p);
+                p = p.left;
+            }
+            p = stack.pop();
+            if (isFirst) {
+                root = p;//中序遍历的第一个节点记为root
+                pre = root;
+                isFirst = false;
+            } else {
+                pre.right = p;
+                p.left = pre;
+                pre = p;
+            }
+            p = p.right;
+        }
+        return root;
     }
 }
