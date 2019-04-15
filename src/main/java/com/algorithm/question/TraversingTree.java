@@ -18,7 +18,7 @@ public class TraversingTree {
      */
     public void preTraverseStack(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
-        stack.add(root);
+        stack.push(root);
         while (!stack.empty()) {
             TreeNode node = stack.pop();
             //先入右节点
@@ -212,13 +212,29 @@ public class TraversingTree {
         TreeNode node5 = new TreeNode(5);
         TreeNode node6 = new TreeNode(6);
         TreeNode node7 = new TreeNode(7);
+        TreeNode node8 = new TreeNode(8);
+        TreeNode node9 = new TreeNode(9);
+        TreeNode node10 = new TreeNode(10);
+        TreeNode node11 = new TreeNode(11);
+        TreeNode node12 = new TreeNode(12);
+        TreeNode node13 = new TreeNode(13);
+        TreeNode node14 = new TreeNode(14);
+        TreeNode node15 = new TreeNode(15);
+        node8.left = node4;
+        node8.right = node12;
         node4.left = node2;
         node4.right = node6;
         node2.left = node1;
         node2.right = node3;
         node6.left = node5;
         node6.right = node7;
+        node12.left = node10;
+        node12.right = node14;
+        node10.left = node9;
+        node10.right = node11;
+        node14.left = node13;
+        node14.right = node15;
 
-        return node4;
+        return node8;
     }
 }
