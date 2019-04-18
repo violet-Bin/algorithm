@@ -1,5 +1,7 @@
 package com.algorithm.swordoffer;
 
+import java.util.Stack;
+
 /**
  * @author: jiangjiabin001
  * @date: 2019/4/10
@@ -23,6 +25,36 @@ public class Code61KthNode {
             if (--k == 0) return root;
             if ((temp = helper(root.right)) != null) return temp;
 
+        }
+        return null;
+    }
+
+    /**
+     * 非递归中序遍历
+     *
+     * @param root
+     * @param k
+     * @return
+     */
+    public TreeNode KthNode2(TreeNode root, int k) {
+        if (root == null || k == 0) {
+            return null;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        int count = 0;
+        TreeNode node = root;
+        while (node != null || !stack.empty()) {
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            } else {
+                node = stack.pop();
+                count++;
+                if (count == k) {
+                    return node;
+                }
+                node = node.right;
+            }
         }
         return null;
     }

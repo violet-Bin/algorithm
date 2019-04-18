@@ -1,7 +1,5 @@
 package com.algorithm.swordoffer;
 
-import java.time.temporal.Temporal;
-
 /**
  * @Author: jiangjiabin
  * @Description: 给定一个数组A[0, 1, ..., n-1],请构建一个数组B[0,1,...,n-1],
