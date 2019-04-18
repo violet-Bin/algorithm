@@ -7,6 +7,7 @@ import java.util.Stack;
  * @author: jiangjiabin001
  * @date: 2019/4/4
  * @Description: 输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
+ * 入栈 -> 出栈
  */
 public class Code02PrintListFromTailToHead {
 

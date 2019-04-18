@@ -23,7 +23,7 @@ public class Code13FindKthToTail {
             }
         }
 
-        if (count > k) {
+        if (count >= k) {
             return node1;
         } else {
             return null;

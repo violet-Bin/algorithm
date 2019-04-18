@@ -1,6 +1,5 @@
 package com.algorithm.swordoffer;
 
-import java.nio.channels.Pipe;
 import java.util.Stack;
 
 /**
@@ -13,9 +12,9 @@ import java.util.Stack;
  */
 public class Code20IsPopOrder {
 
-    public boolean isPopOrder(int [] pushA,int [] popA) {
+    public boolean isPopOrder(int[] pushA, int[] popA) {
         if (pushA == null || popA == null ||
-                pushA.length == 0 || popA.length ==0 || pushA.length != popA.length) {
+                pushA.length == 0 || popA.length == 0 || pushA.length != popA.length) {
             return false;
         }
         Stack<Integer> stack = new Stack<>();
@@ -28,6 +27,6 @@ public class Code20IsPopOrder {
             }
         }
         return stack.empty();
-     }
+    }
 
 }

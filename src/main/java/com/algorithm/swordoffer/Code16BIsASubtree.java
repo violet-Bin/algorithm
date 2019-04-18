@@ -26,7 +26,7 @@ public class Code16BIsASubtree {
             }
         }
 
-        return false;
+        return flag;
     }
 
     private boolean isSubtree(TreeNode root1, TreeNode root2) {

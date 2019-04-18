@@ -1,6 +1,7 @@
 package com.algorithm.swordoffer;
 
 import java.util.Iterator;
+import java.util.SplittableRandom;
 import java.util.Stack;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Stack;
  * 出栈，AB栈顶元素等才都出。
  */
 public class Code19MinNumInStack {
-
+    /*
     Stack<Integer> stack = new Stack<>();
     public void push(int node) {
         stack.push(node);
@@ -38,6 +39,38 @@ public class Code19MinNumInStack {
             }
         }
         return min;
+    }
+    */
+
+    Stack<Integer> stack = new Stack<>();
+    Stack<Integer> minStack = new Stack<>();
+    public void push(int node) {
+        if (stack.empty()) {
+            stack.push(node);
+            minStack.push(node);
+        } else {
+            stack.push(node);
+            if (minStack.peek() > node) {
+                minStack.push(node);
+            }
+        }
+    }
+
+    public void pop() {
+        if (stack.peek() == minStack.peek()) {
+            stack.pop();
+            minStack.pop();
+        } else {
+            stack.pop();
+        }
+    }
+
+    public int top() {
+        return stack.peek();
+    }
+
+    public int min() {
+        return minStack.peek();
     }
 
 }

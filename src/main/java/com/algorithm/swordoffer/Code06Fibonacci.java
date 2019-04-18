@@ -7,6 +7,7 @@ package com.algorithm.swordoffer;
  * 请你输出斐波那契数列的第n项（从0开始，第0项为0）。
  * n<=39
  * 1 1 2 3 5 8 13 21 34 55...
+ * a b c
  */
 public class Code06Fibonacci {
 
@@ -19,8 +20,8 @@ public class Code06Fibonacci {
         } else {
             for (int i = 3; i <= n; i++) {
                 c = a + b;
-                b = a;
-                a = c;
+                a = b;
+                b = c;
             }
             return c;
         }
@@ -28,7 +29,7 @@ public class Code06Fibonacci {
 
     public static void main(String[] args) {
         Code06Fibonacci obj = new Code06Fibonacci();
-        int fibonacci = obj.fibonacci(3);
+        int fibonacci = obj.fibonacci(8);
         System.out.println(fibonacci);
     }
 }
