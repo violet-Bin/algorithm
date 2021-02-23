@@ -8,7 +8,7 @@ package com.algorithm.coder.no1.code00;
  */
 public class Code00BubbleSort {
 
-    private static void bubbleSort(int[] arr) {
+    private static void bubbleSort1(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
@@ -21,9 +21,43 @@ public class Code00BubbleSort {
         }
     }
 
+    //优化：当完全有序的时候，时间复杂度就是O(n)
+    private static void bubbleSort2(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int end = arr.length - 1; end > 0; end--) {
+            boolean sorted = true;
+            for (int i = 0; i < end; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    Common.swap(arr, i, i + 1);
+                    sorted = false;
+                }
+            }
+            if (sorted) break;
+        }
+    }
+
+    //优化：当局部有序时, 记录最后1次交换的位置
+    private static void bubbleSort3(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int end = arr.length - 1; end > 0; end--) {
+            int sortIndex = 0;
+            for (int i = 0; i < end; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    Common.swap(arr, i, i + 1);
+                    sortIndex = i + 1;
+                }
+            }
+            end = sortIndex;
+        }
+    }
+
     public static void main(String[] args) {
-        int testTime = 500000;//测试50万次
-        int maxSize = 100;
+        int testTime = 50;//测试50万次
+        int maxSize = 20;
         int maxValue = 100;
         boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
@@ -42,5 +76,22 @@ public class Code00BubbleSort {
         Common.printArray(arr);
         bubbleSort(arr);
         Common.printArray(arr);
+    }
+
+
+    public static void bubbleSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int end = arr.length - 1; end > 0; end--) {
+            int lastIndex = 0;
+            for (int i = 0; i < end; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    Common.swap(arr, i, i+ 1);
+                    lastIndex = i + 1;
+                }
+            }
+            end = lastIndex;
+        }
     }
 }

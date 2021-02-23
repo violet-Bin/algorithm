@@ -11,7 +11,12 @@ public class Code04SmallSum {
         if (arr == null || arr.length < 2) {
             return 0;
         }
-        return mergeSort(arr, 0, arr.length - 1);
+        int small = mergeSort(arr, 0, arr.length - 1);
+        for (Integer i : arr) {
+            System.out.println(i);
+        }
+        System.out.println("small" + small);
+        return small;
     }
 
     public static int mergeSort(int[] arr, int l, int r) {
@@ -45,7 +50,7 @@ public class Code04SmallSum {
     }
 
     public static void main(String[] args) {
-        int testTime = 500000;
+        int testTime = 1;
         int maxSize = 10;
         int maxValue = 100;
         boolean succeed = true;

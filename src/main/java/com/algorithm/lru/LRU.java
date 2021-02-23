@@ -1,6 +1,10 @@
 package com.algorithm.lru;
 
+import org.omg.CORBA.StringHolder;
+
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * @author: jiangjiabin001
@@ -51,6 +55,7 @@ public class LRU {
 
         head.next = tail;
         tail.pre = head;
+
     }
 
     public void set(String key, int value) {
@@ -59,18 +64,18 @@ public class LRU {
             DLinkedList newNode = new DLinkedList();
             newNode.key = key;
             newNode.value = value;
-            this.cache.put(key, newNode);
-            this.addNode(newNode);
+            cache.put(key, newNode);
+            addNode(newNode);
             count++;
 
             if (count > capacity) {
-                DLinkedList lastNode = this.popLast();
-                this.cache.remove(lastNode.key);
+                DLinkedList lastNode = popLast();
+                cache.remove(lastNode.key);
                 count--;
             }
         } else {
             node.value = value;
-            this.moveToHead(node);
+            moveToHead(node);
         }
     }
 
@@ -79,7 +84,7 @@ public class LRU {
         if (node == null) {
             return -1;
         }
-        this.moveToHead(node);
+        moveToHead(node);
         return node.value;
     }
 
@@ -92,7 +97,7 @@ public class LRU {
 
     private DLinkedList popLast() {
         DLinkedList lastNode = tail.pre;
-        this.removeNode(lastNode);
+        removeNode(lastNode);
         return lastNode;
     }
 
@@ -104,8 +109,8 @@ public class LRU {
     }
 
     private void moveToHead(DLinkedList node) {
-        this.removeNode(node);
-        this.addNode(node);
+        removeNode(node);
+        addNode(node);
     }
 
     @Override

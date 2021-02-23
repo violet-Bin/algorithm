@@ -20,7 +20,7 @@ public class Code06QuickSort {
 
     public static void quickSort(int[] arr, int l, int r) {
         if (l < r) {
-            Common.swap(arr, l + (int) (Math.random() * (r - l + 1)), r);//随机选一个数和最后一个数交换
+//            Common.swap(arr, l + (int) (Math.random() * (r - l + 1)), r);//随机选一个数和最后一个数交换
             int[] p = partition(arr, l, r);
             quickSort(arr, l, p[0] - 1);
             quickSort(arr, p[1] + 1, r);
@@ -44,9 +44,9 @@ public class Code06QuickSort {
     }
 
     public static void main(String[] args) {
-        int testTime = 500000;
-        int maxSize = 50;
-        int maxValue = 100;
+        int testTime = 5;
+        int maxSize = 10;
+        int maxValue = 10;
         boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = Common.generateRandomArray(maxSize, maxValue);
@@ -66,6 +66,8 @@ public class Code06QuickSort {
         Common.printArray(arr);
         quickSort(arr);
         Common.printArray(arr);
+
+        quickSort(new int[]{3,1,2,8,7,3,2});
     }
 
 }

@@ -22,6 +22,7 @@ public class Code01InsertionSort {
 
     /**
      * 实现为稳定的
+     *
      * @param arr
      */
     public static void insertionSort2(int[] arr) {
@@ -40,7 +41,6 @@ public class Code01InsertionSort {
     }
 
 
-
     public static void main(String[] args) {
         int testTime = 500000;//测试50万次
         int maxSize = 10;
@@ -49,7 +49,7 @@ public class Code01InsertionSort {
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = Common.generateRandomArray(maxSize, maxValue);
             int[] arr2 = Common.copyArray(arr1);
-            insertionSort2(arr1);
+            insertSort(arr1);
             Common.comparator(arr2);
             if (!Common.isEqual(arr1, arr2)) {
                 succeed = false;
@@ -60,7 +60,7 @@ public class Code01InsertionSort {
 
         int[] arr = Common.generateRandomArray(maxSize, maxValue);
         Common.printArray(arr);
-        insertionSort2(arr);
+        insertSort(arr);
         Common.printArray(arr);
 
 //        int testTime = 500000;//测试50万次
@@ -83,6 +83,17 @@ public class Code01InsertionSort {
 //        Common.printArray(arr);
 //        insertionSort(arr);
 //        Common.printArray(arr);
+    }
+
+    public static void insertSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i; j >= 0 && arr[j] > arr[j + 1]; j--) {
+                Common.swap(arr, j, j + 1);
+            }
+        }
     }
 
 }

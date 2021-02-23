@@ -26,4 +26,14 @@ public class Code04TwoStacks2Queue {
         }
         return stack2.pop();
     }
+
+    public static void main(String[] args) {
+        Code04TwoStacks2Queue obj = new Code04TwoStacks2Queue();
+        obj.push(1);
+        obj.push(2);
+        obj.push(3);
+        System.out.println(obj.pop());
+        System.out.println(obj.pop());
+        System.out.println(obj.pop());
+    }
 }

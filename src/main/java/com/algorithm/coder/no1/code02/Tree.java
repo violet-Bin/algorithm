@@ -1,6 +1,7 @@
 package com.algorithm.coder.no1.code02;
 
 import java.util.ArrayDeque;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -31,7 +32,7 @@ public class Tree {
             while (true) {
                 //父节点指向当前节点
                 parent = current;
-                //如果当前指向的节点数据比插入的要
+                //如果当前指向的节点数据比插入的要大
                 if (current.data > value) {
                     current = current.leftChild;
                     if (current == null) {
@@ -249,6 +250,8 @@ public class Tree {
         }
         return maxWidth;
     }
-
+    private int[] toIntArr(List<Integer> arrList) {
+        return arrList.stream().mapToInt(Integer::intValue).toArray();
+    }
 
 }

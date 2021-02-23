@@ -43,7 +43,7 @@ public class Code02SelectionSort {
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = Common.generateRandomArray(maxSize, maxValue);
             int[] arr2 = Common.copyArray(arr1);
-            selectionSort2(arr1);
+            selectSort(arr1);
             Common.comparator(arr2);
             if (!Common.isEqual(arr1, arr2)) {
                 succeed = false;
@@ -54,7 +54,7 @@ public class Code02SelectionSort {
 
         int[] arr = Common.generateRandomArray(maxSize, maxValue);
         Common.printArray(arr);
-        selectionSort2(arr);
+        selectSort(arr);
         Common.printArray(arr);
 //        int testTime = 500000;//测试50万次
 //        int maxSize = 10;
@@ -76,5 +76,18 @@ public class Code02SelectionSort {
 //        Common.printArray(arr);
 //        selectionSort(arr);
 //        Common.printArray(arr);
+    }
+
+    public static void selectSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                minIndex = arr[j] < arr[minIndex] ? j : minIndex;
+            }
+            Common.swap(arr, minIndex, i);
+        }
     }
 }

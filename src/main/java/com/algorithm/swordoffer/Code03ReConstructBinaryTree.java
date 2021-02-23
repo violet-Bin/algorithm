@@ -1,5 +1,7 @@
 package com.algorithm.swordoffer;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * @author: jiangjiabin001
  * @date: 2019/4/4
@@ -10,17 +12,16 @@ package com.algorithm.swordoffer;
  */
 public class Code03ReConstructBinaryTree {
 
-    private int index = -1;
-    public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+    private static int index = -1;
+    public static TreeNode reConstructBinaryTree(int[] pre, int[] in) {
         if (pre == null || in == null) {
             return null;
         }
 
-        TreeNode root = build(pre, in, 0, in.length - 1);
-        return root;
+        return build(pre, in, 0, in.length - 1);
     }
 
-    private TreeNode build(int[] pre, int[] in, int left, int right) {
+    private static TreeNode build(int[] pre, int[] in, int left, int right) {
         if (left > right) {
             return null;
         }
@@ -39,6 +40,14 @@ public class Code03ReConstructBinaryTree {
         root.left = leftNode;
         root.right = rightNode;
         return root;
+    }
+
+    public static void main(String[] args) {
+        int[] pre = {1,2,4,7,3,5,6,8};
+        int[] in = {4,7,2,1,5,3,8,6};
+        TreeNode treeNode = reConstructBinaryTree(pre, in);
+        System.out.println(treeNode.toString());
+        System.out.println(JSON.toJSONString(treeNode));
     }
 }
 

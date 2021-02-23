@@ -44,20 +44,20 @@ public class Code07HeapSort {
         //只要不越界
         while (left < size) {
             //取左子节点和右子节点最大的数  右子节点：left + 1
-            int largest = left + 1 < size && arr[left + 1] > arr[left] ? left + 1 : left;
+            int largestIndex = left + 1 < size && arr[left + 1] > arr[left] ? left + 1 : left;
             //再和index的数比较
-            largest = arr[largest] > arr[index] ? largest : index;
-            if (largest == index) {
+            largestIndex = arr[largestIndex] > arr[index] ? largestIndex : index;
+            if (largestIndex == index) {
                 break;
             }
-            Common.swap(arr, largest, index);
-            index = largest;
+            Common.swap(arr, largestIndex, index);
+            index = largestIndex;
             left = index * 2 + 1;
         }
     }
 
     public static void main(String[] args) {
-        int testTime = 500000;
+        int testTime = 5;
         int maxSize = 100;
         int maxValue = 100;
         boolean succeed = true;

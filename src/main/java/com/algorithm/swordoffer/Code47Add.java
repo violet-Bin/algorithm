@@ -28,7 +28,7 @@ public class Code47Add {
      * 第三步重复上述两步， 各位相加 010^1010=1000，进位值为100=(010&1010)<<1。
      *      继续重复上述两步：1000^100 = 1100，进位值为0，跳出循环，1100为最终结果。
      */
-    public int add1(int num1,int num2) {
+    public static int add1(int num1,int num2) {
         while (num2!=0) {
             int temp = num1^num2;
             num2 = (num1&num2)<<1;
@@ -37,5 +37,25 @@ public class Code47Add {
         return num1;
     }
 
+
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 1000000000; i++) {
+            sum(5555, 7777);
+        }
+        System.out.println(System.currentTimeMillis() - start);
+
+        long start2 = System.currentTimeMillis();
+        for (int i = 0; i < 1000000000; i++) {
+            add1(5555, 7777);
+        }
+        System.out.println(System.currentTimeMillis() - start2);
+
+
+    }
+
+    public static int sum(int num1,int num2) {
+        return num1 + num2;
+    }
 
 }

@@ -32,8 +32,8 @@ public class Code12ShellSort {
 
     public static void main(String[] args) {
         int testTime = 500000;
-        int maxSize = 50;
-        int maxValue = 100;
+        int maxSize = 10;
+        int maxValue = 10;
         boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = Common.generateRandomArray(maxSize, maxValue);

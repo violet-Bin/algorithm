@@ -15,9 +15,7 @@ public class Code01ReplaceSpace {
         StringBuffer newStr = new StringBuffer();
         for (int i = 0, len = str.length(); i < len; i++) {
             if (str.charAt(i) == ' ') {
-                newStr.append('%');
-                newStr.append('2');
-                newStr.append('0');
+                newStr.append("%20");
             } else {
                 newStr.append(str.charAt(i));
             }
